@@ -207,7 +207,7 @@ Install the required libraries using pip:
 *   **Overfitting:** Pay close attention to the training loss and, crucially, the validation loss (if you have a validation set) to avoid overfitting.  Select the checkpoint with the lowest *validation* loss. Early stopping or regularization techniques may be necessary. The note in the notebook `# beware of overfitting!` is critical.
 *   **Checkpoint Selection:** The notebook mentions changing the model checkpoint based on training loss (`# Change model checkpoint that has least training loss in the code below`).  Choose a model checkpoint that provides good generalization performance, which is measured against the *validation* dataset.
 *   **Memory:** Fine-tuning large language models requires significant GPU memory. Consider using smaller batch sizes, gradient accumulation, or techniques like quantization to reduce memory consumption. Setting `modelFinetuned.eval()` and using `torch.no_grad()` are vital to reducing memory consumption during inference.
-*   **Inference Quality:** The generated text demonstrates repetition.  This might be addressed by further fine-tuning, dataset augmentation, or modifying the generation parameters (e.g., temperature, top\_p).
+*   **Inference Quality:** The generated text demonstrates repetition.  This might be addressed by further fine-tuning, dataset augmentation, or modifying the generation parameters (e.g., temperature, top\_p) and also to overcome repetition I enhance prompt such that it provided me response properly based on data which is has been train other then doing repition of different question and answer.
 
 ## Wandb Logging
 
